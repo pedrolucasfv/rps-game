@@ -1,9 +1,12 @@
 import { Story, Meta } from '@storybook/react'
-import Svgrps from '.'
+import Svgrps, { SvgrpsProps } from '.'
 
 export default {
   title: 'Svgrps',
-  component: Svgrps
+  component: Svgrps,
+  args: {
+    type: 'paper'
+  }
 } as Meta
 
-export const Default: Story = () => <Svgrps />
+export const Default: Story<SvgrpsProps> = (args) => <Svgrps {...args} />
