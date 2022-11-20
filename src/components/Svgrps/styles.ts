@@ -1,3 +1,6 @@
-import styled from 'styled-components'
+import styled, { css, DefaultTheme } from 'styled-components'
+import theme from 'styles/theme'
 
-export const Wrapper = styled.main``
+export const Wrapper = styled.div`
+  color: #3b4262;
+`

@@ -41,9 +41,11 @@ export default {
     white: '#FAFAFA',
     black: '#030517',
     gray: '#8F8F8F',
+    lightGray: '#b3b4c6',
     DarkText: 'hsl(229, 25%, 31%)',
     ScoreText: 'hsl(229, 64%, 46%)',
-    HeaderOutline: 'hsl(217, 16%, 45%)'
+    HeaderOutline: 'hsl(217, 16%, 45%)',
+    deadColor: '#e1e4ed'
   },
   spacings: {
     xxsmall: '0.8rem',
