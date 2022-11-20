@@ -12,9 +12,9 @@ const wrapperModifiers = {
     border-color: ${theme.colors.scissors.from};
   `,
   small: () => css`
-    height: 13rem;
-    width: 13rem;
-    border-width: 1.3rem;
+    height: 12rem;
+    width: 12rem;
+    border-width: 1.2rem;
   `,
   medium: () => css`
     height: 16rem;
