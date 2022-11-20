@@ -8,7 +8,7 @@ export type RpsProps = {
 
 const Rps = ({ type, size = 'medium', noColor = false }: RpsProps) => (
   <S.Wrapper type={type} size={size} noColor={noColor}>
-    <Svgrps type={type} noColor={noColor} />
+    <Svgrps type={type} />
   </S.Wrapper>
 )
 

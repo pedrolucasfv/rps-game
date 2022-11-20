@@ -11,12 +11,12 @@ const wrapperModifiers = {
   scissors: (theme: DefaultTheme) => css`
     border-color: ${theme.colors.scissors.from};
   `,
-  small: (theme: DefaultTheme) => css`
+  small: () => css`
     height: 13rem;
     width: 13rem;
     border-width: 1.3rem;
   `,
-  medium: (theme: DefaultTheme) => css`
+  medium: () => css`
     height: 16rem;
     width: 16rem;
   `,
@@ -40,7 +40,7 @@ export const Wrapper = styled.main<RpsProps>`
     justify-content: center;
     border: 1.6rem solid gray;
     ${type && wrapperModifiers[type](theme)}
-    ${size && wrapperModifiers[size](theme)}
+    ${size && wrapperModifiers[size]()}
     
     ${noColor && wrapperModifiers.noColor(theme)}
   `}
