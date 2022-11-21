@@ -2,7 +2,7 @@ import Button from 'components/Button'
 import * as S from './styles'
 
 export type ResultProps = {
-  isWin: boolean
+  isWin?: boolean
 }
 
 const Result = ({ isWin }: ResultProps) => (

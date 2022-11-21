@@ -1,5 +1,5 @@
-import Button from 'components/Button'
+import Page from 'templates/Page'
 
 export default function Home() {
-  return <Button />
+  return <Page />
 }

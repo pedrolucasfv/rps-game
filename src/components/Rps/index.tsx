@@ -3,7 +3,7 @@ import * as S from './styles'
 
 export type RpsProps = {
   size?: 'small' | 'medium'
-  noColor: boolean
+  noColor?: boolean
 } & Pick<SvgrpsProps, 'type'>
 
 const Rps = ({ type, size = 'medium', noColor = false }: RpsProps) => (
