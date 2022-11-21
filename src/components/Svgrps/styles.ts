@@ -1,5 +1,25 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const Wrapper = styled.div`
-  color: #3b4262;
+const wrapperModifiers = {
+  small: () => css`
+    height: 4rem;
+    width: 4rem;
+  `,
+  medium: () => css`
+    height: 7rem;
+    width: 7rem;
+  `,
+  large: () => css`
+    height: 12rem;
+    width: 12rem;
+  `
+}
+type WrapperProps = {
+  size: 'small' | 'medium' | 'large'
+}
+export const Wrapper = styled.div<WrapperProps>`
+  ${({ size }) => css`
+    color: #3b4262;
+    ${wrapperModifiers[size]}
+  `}
 `

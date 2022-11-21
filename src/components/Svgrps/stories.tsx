@@ -5,7 +5,8 @@ export default {
   title: 'Svgrps',
   component: Svgrps,
   args: {
-    type: 'paper'
+    type: 'paper',
+    size: 'small'
   }
 } as Meta
 

@@ -20,6 +20,10 @@ const wrapperModifiers = {
     height: 16rem;
     width: 16rem;
   `,
+  large: () => css`
+    height: 26rem;
+    width: 26rem;
+  `,
   noColor: (theme: DefaultTheme) => css`
     background: #e1e4ed;
     border-color: ${theme.colors.lightGray};
@@ -33,15 +37,13 @@ const wrapperModifiers = {
 export const Wrapper = styled.main<RpsProps>`
   ${({ theme, type, size, noColor }) => css`
     background: ${theme.colors.white};
-
     display: flex;
-    border-radius: 50%;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;
     border: 1.6rem solid gray;
     ${type && wrapperModifiers[type](theme)}
     ${size && wrapperModifiers[size]()}
-    
     ${noColor && wrapperModifiers.noColor(theme)}
   `}
 `

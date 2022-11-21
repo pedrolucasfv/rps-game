@@ -14,11 +14,14 @@ export const Wrapper = styled.main`
 export const Rock = styled.div`
   grid-row: 1;
   grid-column: 1;
+  cursor: pointer;
 `
 export const Paper = styled.div`
   grid-column: 3;
   grid-row: 1;
+  cursor: pointer;
 `
 export const Scissors = styled.div`
   grid-column: 2;
+  cursor: pointer;
 `
