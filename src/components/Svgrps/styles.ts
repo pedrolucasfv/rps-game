@@ -10,8 +10,8 @@ const wrapperModifiers = {
     width: 7rem;
   `,
   large: () => css`
-    height: 12rem;
-    width: 12rem;
+    height: 10rem;
+    width: 10rem;
   `
 }
 type WrapperProps = {

@@ -4,6 +4,9 @@ import { RpsProps } from '.'
 const wrapperModifiers = {
   rock: (theme: DefaultTheme) => css`
     border-color: ${theme.colors.rock.from};
+    svg {
+      margin-top: 0.6rem;
+    }
   `,
   paper: (theme: DefaultTheme) => css`
     border-color: ${theme.colors.paper.from};
@@ -21,8 +24,8 @@ const wrapperModifiers = {
     width: 16rem;
   `,
   large: () => css`
-    height: 26rem;
-    width: 26rem;
+    height: 22rem;
+    width: 22rem;
   `,
   noColor: (theme: DefaultTheme) => css`
     background: #e1e4ed;
