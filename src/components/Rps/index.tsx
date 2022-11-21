@@ -6,7 +6,7 @@ export type RpsProps = {
   noColor?: boolean
 } & Pick<SvgrpsProps, 'type'>
 
-const Rps = ({ type, size = 'medium', noColor = false }: RpsProps) => (
+const Rps = ({ type, size = 'small', noColor = false }: RpsProps) => (
   <S.Wrapper type={type} size={size} noColor={noColor}>
     <Svgrps type={type} />
   </S.Wrapper>
