@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import theme from 'styles/theme'
 
 export const Wrapper = styled.main`
-  height: 150vh; //consertar isso aqui
+  height: 100vh; //consertar isso aqui
   width: 100%;
 
   background-image: linear-gradient(
@@ -11,8 +11,8 @@ export const Wrapper = styled.main`
   );
 
   display: grid;
-  grid-template-rows: 75px 150px 800px 150px;
-  grid-template-columns: 400px 100px 400px 400px 100px 400px;
+  grid-template-rows: 10% 13% 67% 10%;
+  grid-template-columns: 17% 8% 25% 25% 8% 17%;
 `
 export const Text = styled.h3`
   color: ${theme.colors.white};
@@ -22,6 +22,7 @@ export const Text = styled.h3`
 const contentModifiers = {
   pick: () => css`
     grid-column: 3 / 5;
+    margin-top: 4rem;
   `,
   result: () => css`
     grid-column: 2 / 6;

@@ -12,9 +12,9 @@ const RpsPick = () => {
   //pick = pickAux
   return (
     <S.Wrapper>
-      <MatchMedia greaterThan="medium">
+      <MatchMedia greaterThan="huge">
         <S.Content>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 600">
             <path
               fill="none"
               stroke="#000"

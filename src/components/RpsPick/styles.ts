@@ -20,10 +20,10 @@ export const Scissors = styled.div`
 export const Content = styled.div`
   display: grid;
   grid-template-rows: 20rem 20rem;
-  grid-template-columns: 20rem auto 25rem;
+  grid-template-columns: 20rem 25rem 25rem;
   > svg {
     height: 100rem;
-    margin-top: 5rem;
+    margin-top: 6rem;
     margin-left: 7rem;
     grid-column: 1 / span 2;
     grid-row: 1 / span 2;
