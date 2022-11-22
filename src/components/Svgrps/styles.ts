@@ -14,12 +14,14 @@ const wrapperModifiers = {
     width: 10rem;
   `
 }
+
 type WrapperProps = {
   size: 'small' | 'medium' | 'large'
 }
 export const Wrapper = styled.div<WrapperProps>`
   ${({ size }) => css`
     color: #3b4262;
+
     ${wrapperModifiers[size]}
   `}
 `

@@ -1,18 +1,16 @@
-import { useState } from 'react'
 import Rps from 'components/Rps'
 import * as S from './styles'
 import MatchMedia from 'components/MatchMedia'
+import { PickProps } from 'templates/Page'
 
 export type RpsPickProps = {
-  pick: 'paper' | 'scissors' | 'rock'
+  typePicked: (pick: PickProps) => void
 }
 
-const RpsPick = () => {
-  const [pickAux, setPick] = useState(' ')
-  //pick = pickAux
+const RpsPick = ({ typePicked }: RpsPickProps) => {
   return (
     <S.Wrapper>
-      <MatchMedia greaterThan="huge">
+      <MatchMedia greaterThan="medium">
         <S.Content>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 600">
             <path
@@ -23,13 +21,13 @@ const RpsPick = () => {
               opacity=".2"
             />
           </svg>
-          <S.Paper onClick={() => setPick('paper')}>
+          <S.Paper onClick={() => typePicked('paper')}>
             <Rps type="paper" size="large" />
           </S.Paper>
-          <S.Scissors onClick={() => setPick('scissors')}>
+          <S.Scissors onClick={() => typePicked('scissors')}>
             <Rps type="scissors" size="large" />
           </S.Scissors>
-          <S.Rock onClick={() => setPick('rock')}>
+          <S.Rock onClick={() => typePicked('rock')}>
             <Rps type="rock" size="large" />
           </S.Rock>
         </S.Content>

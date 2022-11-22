@@ -13,3 +13,4 @@ export const Text = styled.h2`
     color: ${theme.colors.white};
   `}
 `
+export const Button = styled.div``
