@@ -90,9 +90,9 @@ export const ContentRps = styled.div`
   `}
 
   > svg {
-    height: 100rem;
+    height: 55rem;
     ${media.lessThan('huge')`
-      height: 50rem;
+      height: 28rem;
     `}
     margin-top: 6rem;
     margin-left: 7rem;
@@ -112,9 +112,9 @@ export const ContentRpsls = styled.div`
   `}
 
   > svg {
-    height: 110rem;
+    height: 70rem;
     ${media.lessThan('huge')`
-      height: 65rem;
+      height: 26rem;
     `}
     margin-top: 6rem;
     margin-left: 7rem;

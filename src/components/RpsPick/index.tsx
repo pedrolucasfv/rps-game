@@ -14,7 +14,7 @@ const RpsPick = ({ typePicked, game }: RpsPickProps) => {
       <MatchMedia lessThan="huge">
         {game == 'rps' && (
           <S.ContentRps>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 600">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320">
               <path
                 fill="none"
                 stroke="#000"
@@ -37,7 +37,7 @@ const RpsPick = ({ typePicked, game }: RpsPickProps) => {
 
         {game == 'rpsls' && (
           <S.ContentRpsls>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 800">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 320">
               <path
                 fill="none"
                 stroke="#000"
@@ -68,7 +68,7 @@ const RpsPick = ({ typePicked, game }: RpsPickProps) => {
       <MatchMedia greaterThan="huge">
         {game == 'rps' && (
           <S.ContentRps>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 600">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320">
               <path
                 fill="none"
                 stroke="#000"
@@ -91,7 +91,7 @@ const RpsPick = ({ typePicked, game }: RpsPickProps) => {
 
         {game == 'rpsls' && (
           <S.ContentRpsls>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 600">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 350">
               <path
                 fill="none"
                 stroke="#000"
