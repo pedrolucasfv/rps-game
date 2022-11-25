@@ -1,4 +1,3 @@
-import Rps from 'components/Rps'
 import * as S from './styles'
 
 export type RulesProps = {

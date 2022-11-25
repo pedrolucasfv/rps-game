@@ -1,11 +1,11 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import Header from 'components/Header'
 import Result from 'components/Result'
 import Rps from 'components/Rps'
 import * as S from './styles'
 import RpsPick from 'components/RpsPick'
 import { SvgrpsProps } from 'components/Svgrps'
-
+import Context from 'providers/context'
 export type PickProps = Pick<SvgrpsProps, 'type'>
 
 const Page = () => {
@@ -14,8 +14,7 @@ const Page = () => {
   const [yourPick, setYourPick] = useState('')
   const [housePick, setHousePick] = useState('')
 
-  const [yourPoint, setYourPoint] = useState(0)
-  const [housePoint, setHousePoint] = useState(0)
+  const [yourPoint, setYourPoint] = useContext(Context)
 
   const [isWin, setIsWin] = useState(false)
 
@@ -25,7 +24,6 @@ const Page = () => {
     whoPointed(pick, housePick)
 
     console.log(` your: ${yourPoint}`)
-    console.log(` house: ${housePoint}`)
     setStage('result')
   }
 
@@ -40,43 +38,28 @@ const Page = () => {
     setStage('pick')
   }
 
+  //código inspirado no melhor código do clash-of-codes
   const whoPointed = (yourPick: PickProps, housePick: PickProps) => {
-    if (yourPick == 'rock') {
-      if (housePick == 'paper') {
-        setHousePoint((housePoint) => housePoint + 1)
-        setIsWin(false)
-      }
-      if (housePick == 'scissors') {
-        setYourPoint((yourPoint) => yourPoint + 1)
-        setIsWin(true)
-      } else console.log('nobody pointed')
-    }
-    if (yourPick == 'paper') {
-      if (housePick == 'rock') {
-        setYourPoint((yourPoint) => yourPoint + 1)
-        setIsWin(true)
-      }
-      if (housePick == 'scissors') {
-        setHousePoint((housePoint) => housePoint + 1)
-        setIsWin(false)
-      } else console.log('nobody pointed')
-    }
-    if (yourPick == 'scissors') {
-      if (housePick == 'rock') {
-        setHousePoint((housePoint) => housePoint + 1)
-        setIsWin(false)
-      }
-      if (housePick == 'paper') {
-        setYourPoint((yourPoint) => yourPoint + 1)
-        setIsWin(true)
-      } else console.log('nobody pointed')
+    if (yourPick == housePick) console.log('nobody wins')
+    else if (yourPick == 'rock' && housePick == 'scissors') {
+      setYourPoint((yourPoint) => yourPoint + 1)
+      setIsWin(true)
+    } else if (yourPick == 'paper' && housePick == 'rock') {
+      setYourPoint((yourPoint) => yourPoint + 1)
+      setIsWin(true)
+    } else if (yourPick == 'scissors' && housePick == 'paper') {
+      setYourPoint((yourPoint) => yourPoint + 1)
+      setIsWin(true)
+    } else {
+      setYourPoint((yourPoint) => yourPoint - 1)
+      setIsWin(false)
     }
   }
 
   return (
     <S.Wrapper>
       <S.Header>
-        <Header game="rps" yourScore={yourPoint} houseScore={housePoint} />
+        <Header game="rps" yourScore={yourPoint} />
       </S.Header>
       {stage == 'pick' && (
         <S.Content stage={stage}>
