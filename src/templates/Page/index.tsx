@@ -6,10 +6,12 @@ import * as S from './styles'
 import RpsPick from 'components/RpsPick'
 import { SvgrpsProps } from 'components/Svgrps'
 import Context from 'providers/context'
+
 export type PickProps = Pick<SvgrpsProps, 'type'>
 
 const Page = () => {
   const [stage, setStage] = useState('pick')
+  const [game, setGame] = useState('rps')
 
   const [yourPick, setYourPick] = useState('')
   const [housePick, setHousePick] = useState('')
@@ -22,32 +24,65 @@ const Page = () => {
     setYourPick(pick)
     computerPick()
     whoPointed(pick, housePick)
-
-    console.log(` your: ${yourPoint}`)
     setStage('result')
   }
 
   const computerPick = () => {
     const interval = Math.random()
-    if (interval < 0.3333333) setHousePick('rock')
-    if (interval >= 0.3333333 && interval < 0.6666666) setHousePick('paper')
-    if (interval >= 0.6666666) setHousePick('scissors')
+    if (game == 'rps') {
+      if (interval <= 0.333333) setHousePick('rock')
+      if (interval > 0.333333 && interval <= 0.66666) setHousePick('paper')
+      if (interval > 0.6666) setHousePick('scissors')
+    } else {
+      if (interval <= 0.2) setHousePick('rock')
+      if (interval > 0.2 && interval <= 0.4) setHousePick('paper')
+      if (interval > 0.4 && interval <= 0.6) setHousePick('scissors')
+      if (interval > 0.6 && interval <= 0.8) setHousePick('lizard')
+      if (interval > 0.8) setHousePick('spock')
+    }
   }
 
   const playAgain = () => {
     setStage('pick')
   }
 
+  const changeGame = () => {
+    console.log(game)
+    if (game == 'rps') setGame('rpsls')
+    else setGame('rps')
+  }
+
   //código inspirado no melhor código do clash-of-codes
   const whoPointed = (yourPick: PickProps, housePick: PickProps) => {
     if (yourPick == housePick) console.log('nobody wins')
-    else if (yourPick == 'rock' && housePick == 'scissors') {
+    else if (
+      yourPick == 'rock' &&
+      (housePick == 'scissors' || housePick == 'lizard')
+    ) {
       setYourPoint((yourPoint) => yourPoint + 1)
       setIsWin(true)
-    } else if (yourPick == 'paper' && housePick == 'rock') {
+    } else if (
+      yourPick == 'paper' &&
+      (housePick == 'rock' || housePick == 'spock')
+    ) {
       setYourPoint((yourPoint) => yourPoint + 1)
       setIsWin(true)
-    } else if (yourPick == 'scissors' && housePick == 'paper') {
+    } else if (
+      yourPick == 'scissors' &&
+      (housePick == 'paper' || housePick == 'lizard')
+    ) {
+      setYourPoint((yourPoint) => yourPoint + 1)
+      setIsWin(true)
+    } else if (
+      yourPick == 'lizard' &&
+      (housePick == 'spock' || housePick == 'paper')
+    ) {
+      setYourPoint((yourPoint) => yourPoint + 1)
+      setIsWin(true)
+    } else if (
+      yourPick == 'spock' &&
+      (housePick == 'rock' || housePick == 'scissors')
+    ) {
       setYourPoint((yourPoint) => yourPoint + 1)
       setIsWin(true)
     } else {
@@ -58,14 +93,26 @@ const Page = () => {
 
   return (
     <S.Wrapper>
-      <S.Header>
-        <Header game="rps" yourScore={yourPoint} />
-      </S.Header>
+      {game == 'rps' ? (
+        <S.Header>
+          <Header game="rps" yourScore={yourPoint} changeGame={changeGame} />
+        </S.Header>
+      ) : (
+        <S.Header>
+          <Header game="rpsls" yourScore={yourPoint} changeGame={changeGame} />
+        </S.Header>
+      )}
+
       {stage == 'pick' && (
         <S.Content stage={stage}>
-          <RpsPick typePicked={typePicked} />
+          {game == 'rps' ? (
+            <RpsPick game="rps" typePicked={typePicked} />
+          ) : (
+            <RpsPick game="rpsls" typePicked={typePicked} />
+          )}
         </S.Content>
       )}
+
       {stage == 'result' && (
         <S.Content stage={stage}>
           <S.YouPick>

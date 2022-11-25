@@ -15,6 +15,19 @@ const wrapperModifiers = {
   scissors: (theme: DefaultTheme) => css`
     border-color: ${theme.colors.scissors.from};
   `,
+  lizard: (theme: DefaultTheme) => css`
+    border-color: ${theme.colors.lizard.from};
+    svg {
+      margin-top: 0.1rem;
+      margin-left: 0.1rem;
+    }
+  `,
+  spock: (theme: DefaultTheme) => css`
+    border-color: ${theme.colors.spock.from};
+    svg {
+      margin-left: 1rem;
+    }
+  `,
   small: () => css`
     height: 12rem;
     width: 12rem;

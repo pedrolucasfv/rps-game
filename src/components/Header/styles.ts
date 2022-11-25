@@ -9,3 +9,6 @@ export const Wrapper = styled.main`
   border: 0.3rem solid ${theme.colors.gray};
   border-radius: 1.5rem;
 `
+export const Logo = styled.div`
+  cursor: pointer;
+`

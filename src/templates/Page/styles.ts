@@ -11,7 +11,7 @@ export const Wrapper = styled.main`
   );
 
   display: grid;
-  grid-template-rows: 10% 13% 67% 10%;
+  grid-template-rows: 6% 13% 67% 10%;
   grid-template-columns: 17% 8% 25% 25% 8% 17%;
 `
 export const Text = styled.h3`

@@ -8,12 +8,12 @@ const wrapperModifiers = {
     align-items: center;
     svg {
       margin-top: 6rem;
-      margin-bottom: 6.5rem
+      margin-bottom: 6.5rem;
     }
   `,
   default: () => css`
-   width: 45rem;
-   height: 45rem;
+    width: 45rem;
+    height: 50rem;
   `
 }
 
