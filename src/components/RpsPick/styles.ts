@@ -36,11 +36,12 @@ export const RpslsPaper = styled.div`
   grid-column: 2;
   grid-row: 1;
   cursor: pointer;
-
-  ${media.lessThan('huge')`
   display: flex;
+  justify-content: center;
+  ${media.lessThan('huge')`
+  
+  justify-content: flex-end;
   align-items: center;
-    justify-content: flex-end;
   `}
 `
 export const RpslsScissors = styled.div`
@@ -48,7 +49,7 @@ export const RpslsScissors = styled.div`
   grid-row: 3;
   cursor: pointer;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   ${media.lessThan('huge')`
     align-items: center;
     justify-content: flex-end;
@@ -60,7 +61,7 @@ export const RpslsLizard = styled.div`
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 
   ${media.lessThan('huge')`
     justify-content: center;
@@ -112,7 +113,7 @@ export const ContentRpsls = styled.div`
   `}
 
   > svg {
-    height: 70rem;
+    height: 60rem;
     ${media.lessThan('huge')`
       height: 26rem;
     `}

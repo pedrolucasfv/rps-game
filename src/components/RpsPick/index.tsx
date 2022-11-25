@@ -4,7 +4,7 @@ import MatchMedia from 'components/MatchMedia'
 import { PickProps } from 'templates/Page'
 
 export type RpsPickProps = {
-  typePicked?: (pick: PickProps) => void
+  typePicked: (pick: PickProps) => void
   game: 'rps' | 'rpsls'
 }
 
@@ -101,19 +101,19 @@ const RpsPick = ({ typePicked, game }: RpsPickProps) => {
               />
             </svg>
             <S.RpslsPaper onClick={() => typePicked('paper')}>
-              <Rps type="paper" size="large" />
+              <Rps type="paper" size="medium" />
             </S.RpslsPaper>
             <S.RpslsScissors onClick={() => typePicked('scissors')}>
-              <Rps type="scissors" size="large" />
+              <Rps type="scissors" size="medium" />
             </S.RpslsScissors>
             <S.RpslsRock onClick={() => typePicked('rock')}>
-              <Rps type="rock" size="large" />
+              <Rps type="rock" size="medium" />
             </S.RpslsRock>
             <S.RpslsLizard onClick={() => typePicked('Lizard')}>
-              <Rps type="lizard" size="large" />
+              <Rps type="lizard" size="medium" />
             </S.RpslsLizard>
             <S.RpslsSpock onClick={() => typePicked('Spock')}>
-              <Rps type="spock" size="large" />
+              <Rps type="spock" size="medium" />
             </S.RpslsSpock>
           </S.ContentRpsls>
         )}
