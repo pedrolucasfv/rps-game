@@ -55,10 +55,10 @@ const RpsPick = ({ typePicked, game }: RpsPickProps) => {
             <S.RpslsRock onClick={() => typePicked('rock')}>
               <Rps type="rock" size="small" />
             </S.RpslsRock>
-            <S.RpslsLizard onClick={() => typePicked('Lizard')}>
+            <S.RpslsLizard onClick={() => typePicked('lizard')}>
               <Rps type="lizard" size="small" />
             </S.RpslsLizard>
-            <S.RpslsSpock onClick={() => typePicked('Spock')}>
+            <S.RpslsSpock onClick={() => typePicked('spock')}>
               <Rps type="spock" size="small" />
             </S.RpslsSpock>
           </S.ContentRpsls>

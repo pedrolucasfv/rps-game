@@ -4,7 +4,6 @@ import { RpsProps } from '.'
 const wrapperModifiers = {
   rock: (theme: DefaultTheme) => css`
     border-color: ${theme.colors.rock.from};
-
     svg {
       margin-top: 0.6rem;
     }
