@@ -29,7 +29,7 @@ export const Wrapper = styled.main<WrapperProps>`
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    border-radius: ${theme.border.radius};
+    border-radius: 0.8rem;
     text-decoration: none;
     ${!!color && wrapperModifers[color](theme)}
   `}

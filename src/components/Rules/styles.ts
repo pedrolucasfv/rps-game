@@ -37,7 +37,9 @@ export const Title = styled.h2`
     color: ${theme.colors.DarkText};
   `}
 `
-export const Close = styled.div``
+export const Close = styled.div`
+  cursor: pointer;
+`
 
 export const Svg = styled.div``
 

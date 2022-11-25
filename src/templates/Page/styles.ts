@@ -59,3 +59,27 @@ export const Header = styled.div`
   grid-column: 2 / 8;
   `}
 `
+export const Rules = styled.div`
+  ${media.lessThan('small')`
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  `}
+  ${media.greaterThan('small')`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-row: 2 / 8;
+  grid-column: 4 / 6;
+  `}
+`
+
+export const ButtonRules = styled.div`
+  grid-row: 4;
+  grid-column: 7;
+  ${media.lessThan('small')`
+  grid-row: 5;
+  grid-column: 4/6;
+  margin: 2rem;
+  `}
+`

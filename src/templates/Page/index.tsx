@@ -6,12 +6,16 @@ import * as S from './styles'
 import RpsPick from 'components/RpsPick'
 import { SvgrpsProps } from 'components/Svgrps'
 import Context from 'providers/context'
+import Button from 'components/Button'
+import Rules from 'components/Rules'
+import MatchMedia from 'components/MatchMedia'
 
 export type PickProps = Pick<SvgrpsProps, 'type'>
 
 const Page = () => {
   const [stage, setStage] = useState('pick')
   const [game, setGame] = useState('rps')
+  const [rules, setRules] = useState(false)
 
   const [yourPick, setYourPick] = useState('')
   const [housePick, setHousePick] = useState('')
@@ -44,6 +48,10 @@ const Page = () => {
 
   const playAgain = () => {
     setStage('pick')
+  }
+
+  const closeRules = () => {
+    setRules(false)
   }
 
   const changeGame = () => {
@@ -124,6 +132,28 @@ const Page = () => {
             <Rps type={housePick} size="large" />
           </S.ComputerPick>
         </S.Content>
+      )}
+      <S.ButtonRules onClick={() => setRules(true)}>
+        <Button color="dark">RULES</Button>
+      </S.ButtonRules>
+
+      {rules && (
+        <S.Rules>
+          <MatchMedia greaterThan="medium">
+            {game == 'rps' ? (
+              <Rules game="rps" closeRules={closeRules} />
+            ) : (
+              <Rules game="rpsls" closeRules={closeRules} />
+            )}
+          </MatchMedia>
+          <MatchMedia lessThan="medium">
+            {game == 'rps' ? (
+              <Rules game="rps" closeRules={closeRules} fullScreen />
+            ) : (
+              <Rules game="rpsls" closeRules={closeRules} fullScreen />
+            )}
+          </MatchMedia>
+        </S.Rules>
       )}
     </S.Wrapper>
   )

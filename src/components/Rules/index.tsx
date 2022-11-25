@@ -2,15 +2,20 @@ import * as S from './styles'
 
 export type RulesProps = {
   game: 'rps' | 'rpsls'
-  fullScreen: boolean
+  fullScreen?: boolean
+  closeRules: () => void
 }
 
-const Rules = ({ fullScreen = false, game = 'rps' }: RulesProps) => (
+const Rules = ({
+  fullScreen = false,
+  game = 'rps',
+  closeRules
+}: RulesProps) => (
   <S.Wrapper fullScreen={fullScreen}>
     <S.Content>
       <S.Title>RULES</S.Title>
       {!fullScreen && (
-        <S.Close>
+        <S.Close onClick={() => closeRules()}>
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
             <path
               fill="#3B4262"
@@ -486,7 +491,7 @@ const Rules = ({ fullScreen = false, game = 'rps' }: RulesProps) => (
     )}
 
     {fullScreen && (
-      <S.Close>
+      <S.Close onClick={() => closeRules()}>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
           <path
             fill="#3B4262"
