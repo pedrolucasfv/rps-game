@@ -47,7 +47,6 @@ const Page = () => {
   }
 
   const changeGame = () => {
-    console.log(game)
     if (game == 'rps') setGame('rpsls')
     else setGame('rps')
   }

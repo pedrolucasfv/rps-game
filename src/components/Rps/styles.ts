@@ -29,13 +29,13 @@ const wrapperModifiers = {
     }
   `,
   small: () => css`
-    height: 12rem;
-    width: 12rem;
+    height: 9rem;
+    width: 9rem;
     border-width: 1.2rem;
   `,
   medium: () => css`
-    height: 16rem;
-    width: 16rem;
+    height: 14rem;
+    width: 14rem;
   `,
   large: () => css`
     height: 22rem;
