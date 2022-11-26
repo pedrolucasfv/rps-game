@@ -29,7 +29,7 @@ const Page = () => {
   const typePicked = (pick: PickProps) => {
     setYourPick(pick)
     computerPick()
-    whoPointed(pick, housePick)
+    whoPointed()
     setStage('result')
   }
 
@@ -62,7 +62,7 @@ const Page = () => {
   }
 
   //código inspirado no melhor código do clash-of-codes
-  const whoPointed = (yourPick: PickProps, housePick: PickProps) => {
+  const whoPointed = () => {
     if (yourPick == housePick) console.log('nobody wins')
     else if (
       yourPick == 'rock' &&
