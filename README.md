@@ -9,7 +9,7 @@ This project use a boilerplate of a course called [React Avançado](https://reac
 
 Click on a circle to make your choice and wait until the house is selected. If you want to have more options, press on the game logo and switch to RPSLS mode with 5 options
 
-### Project Notion
+### Notion
 I have decided to create a "notion" for each project I do, in order to have a record.
 
 Notion RPS-Game: https://comet-dewberry-f3a.notion.site/rps-game-6e859bf04b7946d9a5458b27bdf8decc
