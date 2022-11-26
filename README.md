@@ -17,6 +17,23 @@ This project uses lot of stuff as:
 - [Prettier](https://prettier.io/)
 - [Husky](https://github.com/typicode/husky)
 
+## Screenshots
+
+### Desktop:
+
+<p align="center">
+    <img width= "351px" height="181px" src="/public/screenshots/rpsDesktop.png">
+    <img width= "351px" height="181px" src="/public/screenshots/rpslsDesktop.png">
+  <img width= "351px" height="181px" src="/public/screenshots/rpsDesktopResult.png">
+</p>
+
+### Mobile:
+
+<p align="center">
+    <img width= "215px" height="408px" src="/public/screenshots/rpsMobile.png">
+  <img width= "215px" height="408px" src="/public/screenshots/rpslsMobile.png">
+</p>
+
 ## Getting Started
 
 First, run the development server:
