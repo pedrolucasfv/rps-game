@@ -16,7 +16,7 @@ export const Wrapper = styled.main`
   grid-template-columns: 5% 12% 8% 25% 25% 8% 12% 5%;
 
   ${media.lessThan('small')`
-  grid-template-rows: 3% 13% 45% 22% 17%;
+  grid-template-rows: 3% 13% 60% 10% 15%;
   grid-template-columns: 5% 12% 8% 25% 25% 8% 12% 5%;
   `}
 `
