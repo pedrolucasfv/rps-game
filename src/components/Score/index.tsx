@@ -1,14 +1,15 @@
+import { useSelector } from 'react-redux'
 import * as S from './styles'
 
-export type ScoreProps = {
-  score: number
+const Score = () => {
+  const scoreRedux = useSelector((state) => state.default)
+  console.log(scoreRedux)
+  return (
+    <S.Wrapper>
+      <S.Title>SCORE</S.Title>
+      <S.Score>{scoreRedux}</S.Score>
+    </S.Wrapper>
+  )
 }
-
-const Score = ({ score = 0 }: ScoreProps) => (
-  <S.Wrapper>
-    <S.Title>SCORE</S.Title>
-    <S.Score>{score}</S.Score>
-  </S.Wrapper>
-)
 
 export default Score

@@ -1,14 +1,15 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import Header from 'components/Header'
 import Result from 'components/Result'
 import Rps from 'components/Rps'
 import * as S from './styles'
 import RpsPick from 'components/RpsPick'
 import { SvgrpsProps } from 'components/Svgrps'
-import Context from 'providers/context'
 import Button from 'components/Button'
 import Rules from 'components/Rules'
 import MatchMedia from 'components/MatchMedia'
+import { useSelector, useDispatch } from 'react-redux'
+import { subtract, sum } from 'store/Default/Default.actions'
 
 export type PickProps = Pick<SvgrpsProps, 'type'>
 
@@ -20,9 +21,10 @@ const Page = () => {
   const [yourPick, setYourPick] = useState('')
   const [housePick, setHousePick] = useState('')
 
-  const [yourPoint, setYourPoint] = useContext(Context)
-
   const [isWin, setIsWin] = useState(false)
+
+  const result = useSelector((state) => state.default)
+  const dispatch = useDispatch()
 
   const typePicked = (pick: PickProps) => {
     setYourPick(pick)
@@ -66,34 +68,34 @@ const Page = () => {
       yourPick == 'rock' &&
       (housePick == 'scissors' || housePick == 'lizard')
     ) {
-      setYourPoint((yourPoint) => yourPoint + 1)
+      dispatch(sum(result, 1))
       setIsWin(true)
     } else if (
       yourPick == 'paper' &&
       (housePick == 'rock' || housePick == 'spock')
     ) {
-      setYourPoint((yourPoint) => yourPoint + 1)
+      dispatch(sum(result, 1))
       setIsWin(true)
     } else if (
       yourPick == 'scissors' &&
       (housePick == 'paper' || housePick == 'lizard')
     ) {
-      setYourPoint((yourPoint) => yourPoint + 1)
+      dispatch(sum(result, 1))
       setIsWin(true)
     } else if (
       yourPick == 'lizard' &&
       (housePick == 'spock' || housePick == 'paper')
     ) {
-      setYourPoint((yourPoint) => yourPoint + 1)
+      dispatch(sum(result, 1))
       setIsWin(true)
     } else if (
       yourPick == 'spock' &&
       (housePick == 'rock' || housePick == 'scissors')
     ) {
-      setYourPoint((yourPoint) => yourPoint + 1)
+      dispatch(sum(result, 1))
       setIsWin(true)
     } else {
-      setYourPoint((yourPoint) => yourPoint - 1)
+      dispatch(subtract(result, 1))
       setIsWin(false)
     }
   }
@@ -102,11 +104,11 @@ const Page = () => {
     <S.Wrapper>
       {game == 'rps' ? (
         <S.Header>
-          <Header game="rps" yourScore={yourPoint} changeGame={changeGame} />
+          <Header game="rps" changeGame={changeGame} />
         </S.Header>
       ) : (
         <S.Header>
-          <Header game="rpsls" yourScore={yourPoint} changeGame={changeGame} />
+          <Header game="rpsls" changeGame={changeGame} />
         </S.Header>
       )}
 
@@ -133,6 +135,7 @@ const Page = () => {
           </S.ComputerPick>
         </S.Content>
       )}
+
       <S.ButtonRules onClick={() => setRules(true)}>
         <Button color="dark">RULES</Button>
       </S.ButtonRules>

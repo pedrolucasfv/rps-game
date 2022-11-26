@@ -1,13 +1,10 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
-import Context from 'providers/context'
 import GlobalStyles from 'styles/global'
 import theme from 'styles/theme'
-import { useState } from 'react'
 
 function App({ Component, pageProps }: AppProps) {
-  const [yourPoint, setYourPoint] = useState(0)
   return (
     <ThemeProvider theme={theme}>
       <Head>
@@ -21,9 +18,7 @@ function App({ Component, pageProps }: AppProps) {
           content="A simple project starter to work with TypeScript, React, NextJS and Styled Components"
         />
       </Head>
-      <Context.Provider value={[yourPoint, setYourPoint]}>
-        <Component {...pageProps} />
-      </Context.Provider>
+      <Component {...pageProps} />
       <GlobalStyles />
     </ThemeProvider>
   )
