@@ -1,11 +1,16 @@
-export function sum(a, b) {
+export const actions = {
+  SUM: 'SUM',
+  SUBTRACT: 'SUBTRACT'
+}
+
+export function sum(a: number, b: number) {
   return {
     type: 'SUM',
     payload: [a, b]
   }
 }
 
-export function subtract(a, b) {
+export function subtract(a: number, b: number) {
   return {
     type: 'SUBTRACT',
     payload: [a, b]

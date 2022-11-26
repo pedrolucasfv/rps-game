@@ -4,7 +4,7 @@ import * as S from './styles'
 
 export type HeaderProps = {
   game: 'rps' | 'rpsls'
-  changeGame?: () => void
+  changeGame: () => void
 }
 
 const Header = ({ game, changeGame }: HeaderProps) => (

@@ -10,9 +10,9 @@ import Rules from 'components/Rules'
 import MatchMedia from 'components/MatchMedia'
 import { useSelector, useDispatch } from 'react-redux'
 import { subtract, sum } from 'store/Default/Default.actions'
+import { RootState } from 'store/store'
 
 export type PickProps = Pick<SvgrpsProps, 'type'>
-
 const Page = () => {
   const [stage, setStage] = useState('pick')
   const [game, setGame] = useState('rps')
@@ -23,7 +23,7 @@ const Page = () => {
 
   const [isWin, setIsWin] = useState(false)
 
-  const result = useSelector((state) => state.default)
+  const result = useSelector((state: RootState) => state.default)
   const dispatch = useDispatch()
 
   const typePicked = (pick: PickProps) => {

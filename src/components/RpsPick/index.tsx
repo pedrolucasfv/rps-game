@@ -1,10 +1,9 @@
 import Rps from 'components/Rps'
 import * as S from './styles'
 import MatchMedia from 'components/MatchMedia'
-import { PickProps } from 'templates/Page'
 
 export type RpsPickProps = {
-  typePicked: (pick: PickProps) => void
+  typePicked: (pick: string) => void
   game: 'rps' | 'rpsls'
 }
 

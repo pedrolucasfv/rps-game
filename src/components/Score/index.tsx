@@ -1,8 +1,9 @@
 import { useSelector } from 'react-redux'
+import { RootState } from 'store/store'
 import * as S from './styles'
 
 const Score = () => {
-  const scoreRedux = useSelector((state) => state.default)
+  const scoreRedux = useSelector((state: RootState) => state.default)
   console.log(scoreRedux)
   return (
     <S.Wrapper>

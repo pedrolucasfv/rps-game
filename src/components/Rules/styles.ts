@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import { RulesProps } from '.'
 
 const wrapperModifiers = {
   fullScreen: () => css`
@@ -17,7 +16,11 @@ const wrapperModifiers = {
   `
 }
 
-export const Wrapper = styled.div<RulesProps>`
+type WrapperProps = {
+  fullScreen: boolean
+}
+
+export const Wrapper = styled.div<WrapperProps>`
   ${({ theme, fullScreen }) => css`
     background-color: ${theme.colors.white};
     padding: ${theme.spacings.small} ${theme.spacings.medium};

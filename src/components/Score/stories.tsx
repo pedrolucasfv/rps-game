@@ -1,12 +1,9 @@
 import { Story, Meta } from '@storybook/react'
-import Score, { ScoreProps } from '.'
+import Score from '.'
 
 export default {
   title: 'Score',
   component: Score,
-  args: {
-    score: 12
-  },
   parameters: {
     backgrounds: {
       default: 'dark'
@@ -14,4 +11,4 @@ export default {
   }
 } as Meta
 
-export const Default: Story<ScoreProps> = (args) => <Score {...args} />
+export const Default: Story = () => <Score />
