@@ -44,13 +44,16 @@ export const Content = styled.div<ContentProps>`
   ${({ stage }) => css`
     display: flex;
     justify-content: space-around;
-
     ${contentModifiers[stage]}
     grid-row: 3;
   `}
 `
-export const YouPick = styled.div``
-export const ComputerPick = styled.div``
+export const YouPick = styled.div`
+  margin-right: 3rem;
+`
+export const ComputerPick = styled.div`
+  margin-left: 3rem;
+`
 export const Header = styled.div`
   grid-row: 2;
   grid-column: 4 / 6;

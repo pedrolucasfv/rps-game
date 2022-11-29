@@ -56,7 +56,9 @@ const Page = () => {
 
   const [yourPick, setYourPick] = useState('')
   const [housePick, setHousePick] = useState('')
+
   const [isWin, setIsWin] = useState(false)
+  const [isDraw, setisDraw] = useState(false)
 
   const result = useSelector((state: RootState) => state.default)
   const dispatch = useDispatch()
@@ -100,43 +102,47 @@ const Page = () => {
 
   //código inspirado no melhor código do clash-of-codes
   const whoPointed = () => {
-    if (yourPick == housePick) console.log('nobody wins')
+    if (yourPick == housePick) setisDraw(true)
     else if (
       yourPick == types.rock &&
       (housePick == types.scissors || housePick == types.lizard)
     ) {
       dispatch(sum(result, 1))
       setIsWin(true)
+      setisDraw(false)
     } else if (
       yourPick == types.paper &&
       (housePick == types.rock || housePick == types.spock)
     ) {
       dispatch(sum(result, 1))
       setIsWin(true)
+      setisDraw(false)
     } else if (
       yourPick == types.scissors &&
       (housePick == types.paper || housePick == types.lizard)
     ) {
       dispatch(sum(result, 1))
       setIsWin(true)
+      setisDraw(false)
     } else if (
       yourPick == types.lizard &&
       (housePick == types.spock || housePick == types.paper)
     ) {
       dispatch(sum(result, 1))
       setIsWin(true)
+      setisDraw(false)
     } else if (
       yourPick == types.spock &&
       (housePick == types.rock || housePick == types.scissors)
     ) {
       dispatch(sum(result, 1))
       setIsWin(true)
+      setisDraw(false)
     } else {
       dispatch(subtract(result, 1))
       setIsWin(false)
+      setisDraw(false)
     }
-    console.log(housePick)
-    console.log(yourPick)
   }
 
   return (
@@ -164,21 +170,40 @@ const Page = () => {
       {stage == 'result' && (
         <S.Content stage={stage}>
           <S.YouPick>
-            <S.Text>YOUR PICK</S.Text>
-            {yourPick == 'paper' && <Rps type="paper" size="large" />}
-            {yourPick == 'rock' && <Rps type="rock" size="large" />}
-            {yourPick == 'scissors' && <Rps type="scissors" size="large" />}
-            {yourPick == 'lizard' && <Rps type="lizard" size="large" />}
-            {yourPick == 'spock' && <Rps type="spock" size="large" />}
+            <MatchMedia greaterThan="medium">
+              <S.Text>YOUR PICK</S.Text>
+              {yourPick == 'paper' && <Rps type="paper" size="large" />}
+              {yourPick == 'rock' && <Rps type="rock" size="large" />}
+              {yourPick == 'scissors' && <Rps type="scissors" size="large" />}
+              {yourPick == 'lizard' && <Rps type="lizard" size="large" />}
+              {yourPick == 'spock' && <Rps type="spock" size="large" />}
+            </MatchMedia>
+            <MatchMedia lessThan="medium">
+              <S.Text>YOUR PICK</S.Text>
+              {yourPick == 'paper' && <Rps type="paper" size="small" />}
+              {yourPick == 'rock' && <Rps type="rock" size="small" />}
+              {yourPick == 'scissors' && <Rps type="scissors" size="small" />}
+              {yourPick == 'lizard' && <Rps type="lizard" size="small" />}
+              {yourPick == 'spock' && <Rps type="spock" size="small" />}
+            </MatchMedia>
           </S.YouPick>
-          <Result isWin={isWin} playAgain={playAgain} />
+          <Result isWin={isWin} playAgain={playAgain} isDraw={isDraw} />
           <S.ComputerPick>
             <S.Text>HOUSE PICK</S.Text>
-            {housePick == 'paper' && <Rps type="paper" size="large" />}
-            {housePick == 'rock' && <Rps type="rock" size="large" />}
-            {housePick == 'scissors' && <Rps type="scissors" size="large" />}
-            {housePick == 'lizard' && <Rps type="lizard" size="large" />}
-            {housePick == 'spock' && <Rps type="spock" size="large" />}
+            <MatchMedia greaterThan="medium">
+              {housePick == 'paper' && <Rps type="paper" size="large" />}
+              {housePick == 'rock' && <Rps type="rock" size="large" />}
+              {housePick == 'scissors' && <Rps type="scissors" size="large" />}
+              {housePick == 'lizard' && <Rps type="lizard" size="large" />}
+              {housePick == 'spock' && <Rps type="spock" size="large" />}
+            </MatchMedia>
+            <MatchMedia lessThan="medium">
+              {housePick == 'paper' && <Rps type="paper" size="small" />}
+              {housePick == 'rock' && <Rps type="rock" size="small" />}
+              {housePick == 'scissors' && <Rps type="scissors" size="small" />}
+              {housePick == 'lizard' && <Rps type="lizard" size="small" />}
+              {housePick == 'spock' && <Rps type="spock" size="small" />}
+            </MatchMedia>
           </S.ComputerPick>
         </S.Content>
       )}
