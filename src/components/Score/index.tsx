@@ -4,7 +4,6 @@ import * as S from './styles'
 
 const Score = () => {
   const scoreRedux = useSelector((state: RootState) => state.default)
-  console.log(scoreRedux)
   return (
     <S.Wrapper>
       <S.Title>SCORE</S.Title>

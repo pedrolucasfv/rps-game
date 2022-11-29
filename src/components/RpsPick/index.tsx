@@ -1,14 +1,45 @@
 import Rps from 'components/Rps'
 import * as S from './styles'
 import MatchMedia from 'components/MatchMedia'
-import { PickProps } from '../../templates/Page'
 
 export type RpsPickProps = {
-  typePicked: (pick: PickProps) => void
+  typePicked: (pick: 'rock' | 'paper' | 'scissors' | 'spock' | 'lizard') => void
   game: 'rps' | 'rpsls'
 }
 
 const RpsPick = ({ typePicked, game }: RpsPickProps) => {
+  const types = {
+    rock: 'rock' as unknown as
+      | 'rock'
+      | 'paper'
+      | 'scissors'
+      | 'spock'
+      | 'lizard',
+    paper: 'paper' as unknown as
+      | 'rock'
+      | 'paper'
+      | 'scissors'
+      | 'spock'
+      | 'lizard',
+    scissors: 'scissors' as unknown as
+      | 'rock'
+      | 'paper'
+      | 'scissors'
+      | 'spock'
+      | 'lizard',
+    lizard: 'lizard' as unknown as
+      | 'rock'
+      | 'paper'
+      | 'scissors'
+      | 'spock'
+      | 'lizard',
+    spock: 'spock' as unknown as
+      | 'rock'
+      | 'paper'
+      | 'scissors'
+      | 'spock'
+      | 'lizard'
+  }
   return (
     <S.Wrapper>
       <MatchMedia lessThan="huge">
@@ -23,14 +54,14 @@ const RpsPick = ({ typePicked, game }: RpsPickProps) => {
                 opacity=".2"
               />
             </svg>
-            <S.RpsPaper onClick={() => typePicked('paper')}>
-              <Rps type="paper" size="medium" />
+            <S.RpsPaper onClick={() => typePicked(types.paper)}>
+              <Rps type={types.paper} size="medium" />
             </S.RpsPaper>
-            <S.RpsScissors onClick={() => typePicked('scissors')}>
-              <Rps type="scissors" size="medium" />
+            <S.RpsScissors onClick={() => typePicked(types.scissors)}>
+              <Rps type={types.scissors} size="medium" />
             </S.RpsScissors>
-            <S.RpsRock onClick={() => typePicked('rock')}>
-              <Rps type="rock" size="medium" />
+            <S.RpsRock onClick={() => typePicked(types.rock)}>
+              <Rps type={types.rock} size="medium" />
             </S.RpsRock>
           </S.ContentRps>
         )}
@@ -46,20 +77,20 @@ const RpsPick = ({ typePicked, game }: RpsPickProps) => {
                 opacity=".2"
               />
             </svg>
-            <S.RpslsPaper onClick={() => typePicked('paper')}>
-              <Rps type="paper" size="small" />
+            <S.RpslsPaper onClick={() => typePicked(types.paper)}>
+              <Rps type={types.paper} size="small" />
             </S.RpslsPaper>
-            <S.RpslsScissors onClick={() => typePicked('scissors')}>
-              <Rps type="scissors" size="small" />
+            <S.RpslsScissors onClick={() => typePicked(types.scissors)}>
+              <Rps type={types.scissors} size="small" />
             </S.RpslsScissors>
-            <S.RpslsRock onClick={() => typePicked('rock')}>
-              <Rps type="rock" size="small" />
+            <S.RpslsRock onClick={() => typePicked(types.rock)}>
+              <Rps type={types.rock} size="small" />
             </S.RpslsRock>
-            <S.RpslsLizard onClick={() => typePicked('lizard')}>
-              <Rps type="lizard" size="small" />
+            <S.RpslsLizard onClick={() => typePicked(types.lizard)}>
+              <Rps type={types.lizard} size="small" />
             </S.RpslsLizard>
-            <S.RpslsSpock onClick={() => typePicked('spock')}>
-              <Rps type="spock" size="small" />
+            <S.RpslsSpock onClick={() => typePicked(types.spock)}>
+              <Rps type={types.spock} size="small" />
             </S.RpslsSpock>
           </S.ContentRpsls>
         )}
@@ -77,14 +108,14 @@ const RpsPick = ({ typePicked, game }: RpsPickProps) => {
                 opacity=".2"
               />
             </svg>
-            <S.RpsPaper onClick={() => typePicked('paper')}>
-              <Rps type="paper" size="large" />
+            <S.RpsPaper onClick={() => typePicked(types.paper)}>
+              <Rps type={types.paper} size="large" />
             </S.RpsPaper>
-            <S.RpsScissors onClick={() => typePicked('scissors')}>
-              <Rps type="scissors" size="large" />
+            <S.RpsScissors onClick={() => typePicked(types.scissors)}>
+              <Rps type={types.scissors} size="large" />
             </S.RpsScissors>
-            <S.RpsRock onClick={() => typePicked('rock')}>
-              <Rps type="rock" size="large" />
+            <S.RpsRock onClick={() => typePicked(types.rock)}>
+              <Rps type={types.rock} size="large" />
             </S.RpsRock>
           </S.ContentRps>
         )}
@@ -100,20 +131,20 @@ const RpsPick = ({ typePicked, game }: RpsPickProps) => {
                 opacity=".2"
               />
             </svg>
-            <S.RpslsPaper onClick={() => typePicked('paper')}>
-              <Rps type="paper" size="medium" />
+            <S.RpslsPaper onClick={() => typePicked(types.paper)}>
+              <Rps type={types.paper} size="medium" />
             </S.RpslsPaper>
-            <S.RpslsScissors onClick={() => typePicked('scissors')}>
-              <Rps type="scissors" size="medium" />
+            <S.RpslsScissors onClick={() => typePicked(types.scissors)}>
+              <Rps type={types.scissors} size="medium" />
             </S.RpslsScissors>
-            <S.RpslsRock onClick={() => typePicked('rock')}>
-              <Rps type="rock" size="medium" />
+            <S.RpslsRock onClick={() => typePicked(types.rock)}>
+              <Rps type={types.rock} size="medium" />
             </S.RpslsRock>
-            <S.RpslsLizard onClick={() => typePicked('Lizard')}>
-              <Rps type="lizard" size="medium" />
+            <S.RpslsLizard onClick={() => typePicked(types.lizard)}>
+              <Rps type={types.lizard} size="medium" />
             </S.RpslsLizard>
-            <S.RpslsSpock onClick={() => typePicked('Spock')}>
-              <Rps type="spock" size="medium" />
+            <S.RpslsSpock onClick={() => typePicked(types.spock)}>
+              <Rps type={types.spock} size="medium" />
             </S.RpslsSpock>
           </S.ContentRpsls>
         )}
