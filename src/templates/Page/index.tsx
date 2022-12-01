@@ -11,42 +11,15 @@ import { useSelector, useDispatch } from 'react-redux'
 import { subtract, sum } from 'store/Default/Default.actions'
 import { RootState } from 'store/store'
 
-export type PickProps = {
-  type: 'rock' | 'paper' | 'scissors' | 'spock' | 'lizard'
-}
+export type PickProps = 'rock' | 'paper' | 'scissors' | 'spock' | 'lizard'
 
 const Page = () => {
   const types = {
-    rock: 'rock' as unknown as
-      | 'rock'
-      | 'paper'
-      | 'scissors'
-      | 'spock'
-      | 'lizard',
-    paper: 'paper' as unknown as
-      | 'rock'
-      | 'paper'
-      | 'scissors'
-      | 'spock'
-      | 'lizard',
-    scissors: 'scissors' as unknown as
-      | 'rock'
-      | 'paper'
-      | 'scissors'
-      | 'spock'
-      | 'lizard',
-    lizard: 'lizard' as unknown as
-      | 'rock'
-      | 'paper'
-      | 'scissors'
-      | 'spock'
-      | 'lizard',
-    spock: 'spock' as unknown as
-      | 'rock'
-      | 'paper'
-      | 'scissors'
-      | 'spock'
-      | 'lizard'
+    rock: 'rock' as unknown as PickProps,
+    paper: 'paper' as unknown as PickProps,
+    scissors: 'scissors' as unknown as PickProps,
+    lizard: 'lizard' as unknown as PickProps,
+    spock: 'spock' as unknown as PickProps
   }
 
   const [stage, setStage] = useState('pick')
@@ -63,9 +36,7 @@ const Page = () => {
   const result = useSelector((state: RootState) => state.default)
   const dispatch = useDispatch()
 
-  const typePicked = (
-    pick: 'rock' | 'paper' | 'scissors' | 'spock' | 'lizard'
-  ) => {
+  const typePicked = (pick: PickProps) => {
     setYourPick(pick)
     computerPick()
     whoPointed()
@@ -187,7 +158,9 @@ const Page = () => {
               {yourPick == 'spock' && <Rps type="spock" size="small" />}
             </MatchMedia>
           </S.YouPick>
+
           <Result isWin={isWin} playAgain={playAgain} isDraw={isDraw} />
+
           <S.ComputerPick>
             <S.Text>HOUSE PICK</S.Text>
             <MatchMedia greaterThan="medium">

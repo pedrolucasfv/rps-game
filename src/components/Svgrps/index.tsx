@@ -1,3 +1,4 @@
+import { PickProps } from 'templates/Page'
 import * as S from './styles'
 
 export type SvgrpsProps = {
@@ -7,36 +8,11 @@ export type SvgrpsProps = {
 
 const Svgrps = ({ type, size = 'medium' }: SvgrpsProps) => {
   const types = {
-    rock: 'rock' as unknown as
-      | 'rock'
-      | 'paper'
-      | 'scissors'
-      | 'spock'
-      | 'lizard',
-    paper: 'paper' as unknown as
-      | 'rock'
-      | 'paper'
-      | 'scissors'
-      | 'spock'
-      | 'lizard',
-    scissors: 'scissors' as unknown as
-      | 'rock'
-      | 'paper'
-      | 'scissors'
-      | 'spock'
-      | 'lizard',
-    lizard: 'lizard' as unknown as
-      | 'rock'
-      | 'paper'
-      | 'scissors'
-      | 'spock'
-      | 'lizard',
-    spock: 'spock' as unknown as
-      | 'rock'
-      | 'paper'
-      | 'scissors'
-      | 'spock'
-      | 'lizard'
+    rock: 'rock' as unknown as PickProps,
+    paper: 'paper' as unknown as PickProps,
+    scissors: 'scissors' as unknown as PickProps,
+    lizard: 'lizard' as unknown as PickProps,
+    spock: 'spock' as unknown as PickProps
   }
   return (
     <S.Wrapper size={size}>

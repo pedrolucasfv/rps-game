@@ -1,6 +1,7 @@
 import Rps from 'components/Rps'
 import * as S from './styles'
 import MatchMedia from 'components/MatchMedia'
+import { PickProps } from 'templates/Page'
 
 export type RpsPickProps = {
   typePicked: (pick: 'rock' | 'paper' | 'scissors' | 'spock' | 'lizard') => void
@@ -9,36 +10,11 @@ export type RpsPickProps = {
 
 const RpsPick = ({ typePicked, game }: RpsPickProps) => {
   const types = {
-    rock: 'rock' as unknown as
-      | 'rock'
-      | 'paper'
-      | 'scissors'
-      | 'spock'
-      | 'lizard',
-    paper: 'paper' as unknown as
-      | 'rock'
-      | 'paper'
-      | 'scissors'
-      | 'spock'
-      | 'lizard',
-    scissors: 'scissors' as unknown as
-      | 'rock'
-      | 'paper'
-      | 'scissors'
-      | 'spock'
-      | 'lizard',
-    lizard: 'lizard' as unknown as
-      | 'rock'
-      | 'paper'
-      | 'scissors'
-      | 'spock'
-      | 'lizard',
-    spock: 'spock' as unknown as
-      | 'rock'
-      | 'paper'
-      | 'scissors'
-      | 'spock'
-      | 'lizard'
+    rock: 'rock' as unknown as PickProps,
+    paper: 'paper' as unknown as PickProps,
+    scissors: 'scissors' as unknown as PickProps,
+    lizard: 'lizard' as unknown as PickProps,
+    spock: 'spock' as unknown as PickProps
   }
   return (
     <S.Wrapper>

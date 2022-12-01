@@ -1,10 +1,11 @@
 import Svgrps from 'components/Svgrps'
+import { PickProps } from 'templates/Page'
 import * as S from './styles'
 
 export type RpsProps = {
   size?: 'small' | 'medium' | 'large'
   noColor?: boolean
-  type: 'rock' | 'paper' | 'scissors' | 'spock' | 'lizard'
+  type: PickProps
 }
 
 const Rps = ({ type, size = 'small', noColor = false }: RpsProps) => {
