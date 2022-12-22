@@ -12,3 +12,8 @@ export const Wrapper = styled.main`
 export const Logo = styled.div`
   cursor: pointer;
 `
+export const Text = styled.h4`
+  color: white;
+  padding: 0 2rem;
+  font-size: 1rem;
+`

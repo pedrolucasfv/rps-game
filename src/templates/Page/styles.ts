@@ -74,6 +74,7 @@ export const Rules = styled.div`
   align-items: center;
   grid-row: 2 / 8;
   grid-column: 4 / 6;
+ 
   `}
 `
 
@@ -85,4 +86,24 @@ export const ButtonRules = styled.div`
   grid-column: 4/6;
   margin: 2rem;
   `}
+`
+
+export const Sombra = styled.div`
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: linear-gradient(
+    to top right,
+    rgba(40, 40, 40, 0.4),
+    rgba(33, 33, 33, 0.5),
+    rgba(26, 26, 26, 0.6),
+    rgba(19, 19, 19, 0.7),
+    rgba(10, 10, 10, 0.7)
+  );
+  z-index: 5;
+`
+export const ContentRules = styled.div`
+  z-index: 10;
 `
