@@ -4,7 +4,6 @@ import { RpsProps } from '.'
 const wrapperModifiers = {
   rock: (theme: DefaultTheme) => css`
     border-color: ${theme.colors.rock.from};
-
     svg {
       margin-top: 0.6rem;
     }
@@ -15,14 +14,27 @@ const wrapperModifiers = {
   scissors: (theme: DefaultTheme) => css`
     border-color: ${theme.colors.scissors.from};
   `,
+  lizard: (theme: DefaultTheme) => css`
+    border-color: ${theme.colors.lizard.from};
+    svg {
+      margin-top: 0.1rem;
+      margin-left: 0.1rem;
+    }
+  `,
+  spock: (theme: DefaultTheme) => css`
+    border-color: ${theme.colors.spock.from};
+    svg {
+      margin-left: 1rem;
+    }
+  `,
   small: () => css`
-    height: 12rem;
-    width: 12rem;
+    height: 9rem;
+    width: 9rem;
     border-width: 1.2rem;
   `,
   medium: () => css`
-    height: 16rem;
-    width: 16rem;
+    height: 14rem;
+    width: 14rem;
   `,
   large: () => css`
     height: 22rem;

@@ -5,7 +5,7 @@ export default {
   title: 'Score',
   component: Score,
   args: {
-    score: 12
+    score: 0
   },
   parameters: {
     backgrounds: {

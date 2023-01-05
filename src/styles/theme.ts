@@ -34,6 +34,15 @@ export default {
       from: 'hsl(349, 71%, 52%)',
       to: 'hsl(349, 70%, 56%)'
     },
+    lizard: {
+      from: 'hsl(261, 73%, 60%)',
+      to: 'hsl(349, 70%, 56%)'
+    },
+    spock: {
+      from: 'hsl(189, 59%, 53%)',
+      to: 'hsl(349, 70%, 56%)'
+    },
+
     background: {
       from: 'hsl(214, 47%, 23%)',
       to: 'hsl(237, 49%, 15%)'

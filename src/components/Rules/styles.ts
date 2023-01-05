@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import { RulesProps } from '.'
 
 const wrapperModifiers = {
   fullScreen: () => css`
@@ -8,16 +7,20 @@ const wrapperModifiers = {
     align-items: center;
     svg {
       margin-top: 6rem;
-      margin-bottom: 6.5rem
+      margin-bottom: 6.5rem;
     }
   `,
   default: () => css`
-   width: 45rem;
-   height: 45rem;
+    width: 45rem;
+    height: 50rem;
   `
 }
 
-export const Wrapper = styled.div<RulesProps>`
+type WrapperProps = {
+  fullScreen: boolean
+}
+
+export const Wrapper = styled.div<WrapperProps>`
   ${({ theme, fullScreen }) => css`
     background-color: ${theme.colors.white};
     padding: ${theme.spacings.small} ${theme.spacings.medium};
@@ -37,7 +40,9 @@ export const Title = styled.h2`
     color: ${theme.colors.DarkText};
   `}
 `
-export const Close = styled.div``
+export const Close = styled.div`
+  cursor: pointer;
+`
 
 export const Svg = styled.div``
 
