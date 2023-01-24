@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Header from 'components/Header'
 import Result from 'components/Result'
 import Rps from 'components/Rps'
@@ -40,9 +40,9 @@ const Page = () => {
     picks.computerPick = computer
     setYourPick(picks.yourPick)
     setHousePick(picks.computerPick)
-    console.log(picks)
     setStage('result')
     gameResult(score)
+    localStorage.setItem('points', `${points + score}`)
   }
 
   const gameResult = (score: number) => {
@@ -66,6 +66,16 @@ const Page = () => {
     if (game == 'rps') setGame('rpsls')
     else setGame('rps')
   }
+
+  useEffect(() => {
+    async function getInitialValue() {
+      const initialPoints = parseInt(
+        (localStorage.getItem('points') || 0) as string
+      )
+      setPoints(initialPoints)
+    }
+    getInitialValue()
+  }, [])
 
   return (
     <S.Wrapper>
