@@ -4,16 +4,18 @@ import * as S from './styles'
 
 export type HeaderProps = {
   game: 'rps' | 'rpsls'
-  yourScore: number
-  houseScore: number
+  changeGame: () => void
+  score: number
 }
 
-const Header = ({ game, yourScore, houseScore }: HeaderProps) => (
+const Header = ({ game, changeGame, score }: HeaderProps) => (
   <S.Wrapper>
-    <Score score={yourScore} />
-    {game == 'rps' && <Logo game="rps" />}
-    {game == 'rpsls' && <Logo game="rpsls" />}
-    <Score score={houseScore} />
+    <Score score={score} />
+    <S.Text> click on the logo to change the game</S.Text>
+    <S.Logo onClick={() => changeGame()}>
+      {game == 'rps' && <Logo game="rps" />}
+      {game == 'rpsls' && <Logo game="rpsls" />}
+    </S.Logo>
   </S.Wrapper>
 )
 

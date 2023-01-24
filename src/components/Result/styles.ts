@@ -14,3 +14,5 @@ export const Text = styled.h2`
   `}
 `
 export const Button = styled.div``
+
+export const Content = styled.div``
